@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2</title>
+</head>
+<body>
+    <p>hello world</p>
+<!-- 
+    <svg width="400" height="200">
+        <rect width="80px" height="20px" fill="red" stroke="black" strokeWidth="10px"/>
+        <circle cx="50" cy="50" r="20px" fill="green" />
+    </svg> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js" integrity="sha512-I+rKw3hArzZIHzrkdELbKqrXfkSvw/h0lW/GgB8FThaBVz2e5ZUlSW8kY8v3q6wq37eybIwyufkEZxe4qSlGcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var draw = SVG().addTo('body').size(640, 480)
+
+        var rect = draw.rect(100, 100).attr({ fill: '#f06' })
+
+        let radius = 200;
+
+        let spiral = draw
+            .group()
+            .move(320, 240);
+
+        let max = 100;
+        for (let i = 0; i < max; i++) {
+            let pc = i/max;
+
+            spiral
+                .circle(i)
+                .fill('#06')
+                .move(Math.sin(pc*Math.PI*2) * radius, Math.cos(pc*Math.PI*2) * radius)
+        }
+    </script>
+</body>
+</html>

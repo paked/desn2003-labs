@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello SVG.js!</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+<style media="screen">
+  svg{
+    margin:40px;
+  }
+</style>
+  </head>
+  <body>
+
+
+<h1>Data vis with <a href="http://svgjs.com">SVG.js</a></h1>
+
+
+      <script type="text/javascript">
+      var draw = SVG().addTo("body").size(800, 800);
+      // this data is NSW / ACT solar power output in MWh
+      // since April 2015
+      // from http://pv-map.apvi.org.au/data/states/output.csv
+      //
+     
+      var data = [26908,26233,22776,27480,33641,43668,59592,112138,127801,114781,123790,110596,87784,80255,57583,71622,91463,104705,140382,151346,138454,138378,121971,100637,109354,90740,71616,98826,126117,151691,155113,169479,170763,182444,156885,155202,137954,122290,91638,131253,154691,178965,182863,213790,286673,281183,253926,228867,214843,188533,148711,191791,241198,279723,341440,367906,372239,337058,293496,297411,262901,238584,208625,227768,320799,370755,412445,490221,444299,497458,413495,394137,421061,328524,261763,315510,420168,509686,592854,472568,621523,590399,497991,442790,405840,345857]
+      
+      for (var i = 0; i < data.length; i++) {
+        var d = data[i];
+        draw.rect(d*0.001,6).move(10,i*7);
+      }
+
+      </script>
+
+  </body>
+</html>

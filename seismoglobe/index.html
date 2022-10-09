@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 4</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+
+    <style media="screen">
+        svg {
+            background-color: blue;;
+        }
+    </style>
+  </head>
+  <body>
+
+<h1>Getting Started with <a href="http://svgjs.com">SVG.js</a></h1>
+<script>
+    let urls = {
+    "PASC.00": "CI.PASC.00.BHZ.D.2020-01-28T190923.994500.txt",
+    "PASC.10": "CI.PASC.10.BHZ.D.2020-01-28T190923.994500.txt",
+    "ANWB.00": "CU.ANWB.00.BHZ.M.2020-01-28T190924.019539.txt",
+    "BBGH.00": "CU.BBGH.00.BHZ.M.2020-01-28T190924.000000.txt",
+    "GRGR.00": "CU.GRGR.00.BHZ.M.2020-01-28T190924.019539.txt",
+    "GRTK.00": "CU.GRTK.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "GTBY.00": "CU.GTBY.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "MTDJ.00": "CU.MTDJ.00.BHZ.M.2020-01-28T190924.000001.txt",
+    "SDDR.00": "CU.SDDR.00.BHZ.M.2020-01-28T190924.000000.txt",
+    "TGUH.00": "CU.TGUH.00.BHZ.M.2020-01-28T190924.000000.txt",
+    "FFC.00": "II.FFC.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "FFC.10": "II.FFC.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "JTS.00": "II.JTS.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "JTS.10": "II.JTS.10.BHZ.M.2020-01-28T190924.019539.txt",
+    "PFO.00": "II.PFO.00.BHZ.M.2020-01-28T190924.019539.txt",
+    "PFO.10": "II.PFO.10.BHZ.M.2020-01-28T190924.019536.txt",
+    "NV31..": "IM.NV31..BHZ.M.2020-01-28T190924.000000.txt",
+    "PD31..": "IM.PD31..BHZ.M.2020-01-28T190924.000000.txt",
+    "TX31..": "IM.TX31..BHZ.M.2020-01-28T190924.000000.txt",
+    "ANMO.00": "IU.ANMO.00.BHZ.M.2020-01-28T190924.019536.txt",
+    "ANMO.10": "IU.ANMO.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "BBSR.00": "IU.BBSR.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "BBSR.10": "IU.BBSR.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "CCM.00": "IU.CCM.00.BHZ.M.2020-01-28T190924.019539.txt",
+    "CCM.10": "IU.CCM.10.BHZ.M.2020-01-28T190924.019539.txt",
+    "COR.00": "IU.COR.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "COR.10": "IU.COR.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "COR.60": "IU.COR.60.BHZ.M.2020-01-28T190924.019538.txt",
+    "DWPF.00": "IU.DWPF.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "DWPF.10": "IU.DWPF.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "HKT.00": "IU.HKT.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "HKT.10": "IU.HKT.10.BHZ.M.2020-01-28T190924.019536.txt",
+    "HRV.00": "IU.HRV.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "HRV.10": "IU.HRV.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "HRV.60": "IU.HRV.60.BHZ.M.2020-01-28T190924.019538.txt",
+    "OTAV.00": "IU.OTAV.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "OTAV.10": "IU.OTAV.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "PAYG.00": "IU.PAYG.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "PAYG.10": "IU.PAYG.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "RSSD.00": "IU.RSSD.00.BHZ.M.2020-01-28T190924.019539.txt",
+    "RSSD.10": "IU.RSSD.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "SDV.00": "IU.SDV.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "SDV.10": "IU.SDV.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "SJG.00": "IU.SJG.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "SJG.10": "IU.SJG.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "SLBS.00": "IU.SLBS.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "SLBS.10": "IU.SLBS.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "SSPA.00": "IU.SSPA.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "SSPA.10": "IU.SSPA.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "TEIG.00": "IU.TEIG.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "TEIG.10": "IU.TEIG.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "TEIG.60": "IU.TEIG.60.BHZ.M.2020-01-28T190924.019538.txt",
+    "TUC.00": "IU.TUC.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "TUC.10": "IU.TUC.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "TUC.60": "IU.TUC.60.BHZ.M.2020-01-28T190924.019536.txt",
+    "WCI.00": "IU.WCI.00.BHZ.M.2020-01-28T190924.019538.txt",
+    "WCI.10": "IU.WCI.10.BHZ.M.2020-01-28T190924.019538.txt",
+    "WVT.00": "IU.WVT.00.BHZ.M.2020-01-28T190924.019536.txt",
+    "WVT.10": "IU.WVT.10.BHZ.M.2020-01-28T190924.019538.txt",
+    }
+
+    let width = 800;
+    let height = 800;
+
+    let projection = d3
+        .geoMercator()
+        .scale(100);
+
+    var draw = SVG().addTo("body").size(width, height);
+
+    let map = draw.group();
+    let info = draw.group();
+
+    let reps = [];
+
+    (async () => {
+        let stationsFetch = await fetch('cuba-stations.txt');
+        let stationsText = await stationsFetch.text();
+
+        let stations = stationsText
+            .split('\n') // break into lines
+            .slice(1) // get rid of header line
+            .map(line => line.split('|')) // csv is split on '|'
+            .map(row => { // turn rows into a nice object
+                return {
+                    name: row[0],
+                    lat: row[3],
+                    long: row[4],
+                    url: urls[row[0] + '.00'],
+                }
+            });
+
+        stations.forEach(async station => {
+            if (!station.url) return;
+
+            console.log(`fetching ${station.url}`);
+            let raw = await fetch(`cuba-region/${station.url}`);
+            let txt = await raw.text();
+            let rows = txt.split('\n').slice(1).map(line => line.split('  '))
+
+            let pos = [station.lat, station.long]
+            let ss = projection([pos[1], pos[0]])
+            let rep = info
+                .circle(5)
+                .move(ss[0], ss[1])
+                .fill("red")
+            
+            rep.data = rows;
+
+            reps.push(rep);
+        })
+
+        let data = await fetch("/seismoglobe/data.json");
+
+        let body = await data.json();
+
+        body.features.forEach(feature => {
+            feature.geometry.coordinates.forEach(coords => {
+                coords.forEach(line => {
+                    let poss = line.map(l => projection(l))
+
+                    map
+                        .polygon(poss)
+                        .fill("green")
+                        .stroke({ color: '#010', width: 2, linecap: 'round' })
+                })
+            })
+        })
+
+        let timestamp = info.text("hello world").move(20,20).font({ fill: '#f06', family: 'Inconsolata' })
+
+        let start = new Date('2020-01-28T19:09:23.994500');
+        let end = new Date('2020-01-28T19:09:23.994500');
+        end.setMinutes(start.getMinutes() + 30);
+
+        let index = new Date(start.getTime());
+
+        let times = {}
+
+        function getTime(time) {
+            if (!times[time]) {
+                times[time] = new Date(time);
+            }
+
+            return times[time];
+        }
+    
+        setInterval(() => {
+            if (index > end) {
+                index = new Date(start.getTime());
+            }
+
+            timestamp.text("" + index)
+
+            reps.map(rep => {
+                let data = rep.data.find(([time]) => {
+                    return index < getTime(time);
+                })
+
+                if (!data) return;
+
+                let [time, strnum] = data;
+                const num = Math.log(Math.abs(parseInt(strnum)));
+
+                rep.animate({ duration: 10 }).size(num);
+            })
+
+            index.setSeconds(index.getSeconds() + 15);
+        }, 20)
+    })()
+</script>
+  </body>
+</html>

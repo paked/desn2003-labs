@@ -1,0 +1,5 @@
+<svg width="600px" height="400px">
+    <rect width="80px" height="420px" class="special"/>
+    <circle cx="320" cy="260" r="40" fill="yellow"/>
+    <circle cx="120" cy="260" r="40" class="special"/>
+  </svg>

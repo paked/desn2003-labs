@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello SVG.js!</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+
+  </head>
+  <body>
+
+
+<h1>Canberra rainfall, 2021</h1>
+
+
+      <script type="text/javascript">
+      var draw = SVG().addTo("body").size(1600, 800);
+      var data = [
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 3,
+   "Rain": 5.8
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 4,
+   "Rain": 7.2
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 5,
+   "Rain": 5.4
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 6,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 13,
+   "Rain": 1.8
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 14,
+   "Rain": 1
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 26,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 27,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 29,
+   "Rain": 22.8
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 30,
+   "Rain": 7.8
+ },
+ {
+   "Year": 2021,
+   "Month": 1,
+   "Day": 31,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 2,
+   "Rain": 28.4
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 3,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 4,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 5,
+   "Rain": 2
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 6,
+   "Rain": 30.6
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 7,
+   "Rain": 5.4
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 8,
+   "Rain": 1.4
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 13,
+   "Rain": 2.4
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 23,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 24,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 26,
+   "Rain": 2.4
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 2,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 4,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 5,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 8,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 9,
+   "Rain": 3
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 12,
+   "Rain": 11.2
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 14,
+   "Rain": 9.8
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 15,
+   "Rain": 10.8
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 18,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 19,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 20,
+   "Rain": 2.6
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 21,
+   "Rain": 11.2
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 22,
+   "Rain": 5.8
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 23,
+   "Rain": 30.6
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 24,
+   "Rain": 23.8
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 26,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 28,
+   "Rain": 0.8
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 3,
+   "Day": 31,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 4,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 5,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 11,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 21,
+   "Rain": 1.2
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 26,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 4,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 4,
+   "Rain": 25.4
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 5,
+   "Rain": 12.4
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 6,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 7,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 8,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 11,
+   "Rain": 2.8
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 19,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 20,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 25,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 26,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 30,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 5,
+   "Day": 31,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 3,
+   "Rain": 7
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 4,
+   "Rain": 9.4
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 5,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 8,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 9,
+   "Rain": 4
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 10,
+   "Rain": 10.8
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 11,
+   "Rain": 8
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 17,
+   "Rain": 29.4
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 19,
+   "Rain": 1.8
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 24,
+   "Rain": 11
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 25,
+   "Rain": 19.2
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 26,
+   "Rain": 11.2
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 29,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 6,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 2,
+   "Rain": 7.6
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 3,
+   "Rain": 1
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 4,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 5,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 8,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 10,
+   "Rain": 5.4
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 11,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 13,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 15,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 16,
+   "Rain": 4.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 17,
+   "Rain": 8.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 18,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 19,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 20,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 21,
+   "Rain": 2.8
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 22,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 23,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 24,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 25,
+   "Rain": 10.2
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 26,
+   "Rain": 2.8
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 29,
+   "Rain": 4.8
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 7,
+   "Day": 31,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 1,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 2,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 3,
+   "Rain": 9
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 4,
+   "Rain": 3.6
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 5,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 12,
+   "Rain": 4.8
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 14,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 24,
+   "Rain": 22.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 26,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 28,
+   "Rain": 2.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 29,
+   "Rain": 0.8
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 30,
+   "Rain": 3.2
+ },
+ {
+   "Year": 2021,
+   "Month": 8,
+   "Day": 31,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 4,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 5,
+   "Rain": 39.4
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 6,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 13,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 14,
+   "Rain": 9.4
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 16,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 18,
+   "Rain": 9.6
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 19,
+   "Rain": 2.8
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 20,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 21,
+   "Rain": 2.2
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 26,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 9,
+   "Day": 30,
+   "Rain": 37.8
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 1,
+   "Rain": 14
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 2,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 3,
+   "Rain": 5.6
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 4,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 5,
+   "Rain": 1.6
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 10,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 11,
+   "Rain": 1.2
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 12,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 14,
+   "Rain": 27.2
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 15,
+   "Rain": 3.6
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 16,
+   "Rain": 1.8
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 17,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 20,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 26,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 27,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 10,
+   "Day": 31,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 4,
+   "Rain": 11.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 5,
+   "Rain": 25.4
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 6,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 7,
+   "Rain": 16.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 8,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 9,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 10,
+   "Rain": 0.8
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 11,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 12,
+   "Rain": 30.8
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 13,
+   "Rain": 5.8
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 14,
+   "Rain": 7.2
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 15,
+   "Rain": 5.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 16,
+   "Rain": 0.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 17,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 19,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 20,
+   "Rain": 2
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 21,
+   "Rain": 6.4
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 25,
+   "Rain": 7.6
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 26,
+   "Rain": 26.8
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 27,
+   "Rain": 4.8
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 11,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 1,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 2,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 3,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 4,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 5,
+   "Rain": 5
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 6,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 7,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 8,
+   "Rain": 0.4
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 9,
+   "Rain": 9.6
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 10,
+   "Rain": 34
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 11,
+   "Rain": 1.8
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 12,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 13,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 14,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 15,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 16,
+   "Rain": 3.8
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 17,
+   "Rain": 0.2
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 18,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 19,
+   "Rain": 22.4
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 20,
+   "Rain": 7.8
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 21,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 22,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 23,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 24,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 25,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 26,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 27,
+   "Rain": 2.4
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 28,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 29,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 30,
+   "Rain": 0
+ },
+ {
+   "Year": 2021,
+   "Month": 12,
+   "Day": 31,
+   "Rain": 0
+ }
+];
+
+     
+      
+    var avg = [58.5,56.4,50.7,46.0,44.4,40.5,41.4,46.2,52.0,62.4,64.4,53.2]
+    avg.forEach((a,i) => {
+        if (i > 0) avg[i] = a+ avg[i-1];
+    })
+    
+      var baseline = 600;
+      var col = 3;
+      var leftmargin = 30;
+      let yscale = 0.5;
+ 
+      var mon = data[0].Month;
+      console.log(mon)
+      var accum = 0;
+      var accum_avg = 0;
+      var current_mon = 1;
+      for (var i = 0; i < data.length; i++) {
+        var d = data[i]; // get the data point
+ 
+        // here we grab the data object and access the value with d.value
+        accum += d.Rain;
+       let h = accum*yscale;
+        draw.rect(2.5,h)
+        .move(leftmargin + i*col,baseline-h)
+        .fill("blue")
+        // check to see if it's the start of a year, and if so add the year in the right spot
+        
+        let mon = d.Month-1;
+        let avgh = avg[mon]*yscale;
+        draw.rect(2.5,avgh)
+        .move(leftmargin + i*col,baseline-avgh)
+        .fill("gray")
+        .opacity(0.7)
+
+        if (i == data.length-1){
+            draw.text(Math.round(accum) + "mm")
+            .move(leftmargin + i*col + 5, baseline-h-5);
+
+            draw.text(Math.round(avg[mon]) + "mm")
+            .move(leftmargin + i*col + 5, baseline-avgh-5);
+
+        }
+      }
+
+      </script>
+
+  </body>
+</html>

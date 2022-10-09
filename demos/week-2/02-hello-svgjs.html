@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello SVG.js!</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+<style media="screen">
+
+</style>
+  </head>
+  <body>
+
+
+<h1>Getting Started with <a href="http://svgjs.com">SVG.js</a></h1>
+
+      <script type="text/javascript">
+        var draw = SVG().addTo("body").size(400, 400)
+        var rect = draw.rect(200, 200).attr({ fill: '#f06',stroke:'black' })
+        rect.move(80,80); // we can talk to the drawing elements!
+        rect.rotate(25);
+
+        var spot = draw.circle(100) // we can chain methods to set lots of attributes
+                  .fill('#a8d')
+                  .stroke('black')
+                  .move(180,60);
+
+        var spot2 = draw.circle(150)
+                  .fill('yellow')
+                  .move(80,80)
+                  .opacity(0.8)
+      </script>
+
+  </body>
+</html>
