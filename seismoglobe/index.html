@@ -264,6 +264,57 @@
 "YSS.10": "IU.YSS.10.BHZ.M.2020-01-28T190924.019500.txt"
 }
 
+    let eliminate = [
+        // extras around guantanemo bay
+        'GRTK',
+        'SDDR',
+        'SJG',
+        'MTDJ',
+        'BBGH',
+        'TGUH',
+        'JTS',
+        'GRGR',
+
+        'JOHN',
+
+        // US: ones around the mideast
+        'CCM',
+        'WVT',
+        'SSPA',
+        'DWPF',
+
+        // US: west coast
+        'PASC',
+        'TUC',
+        'ANMO',
+
+        // hawaii
+        'KIP',
+
+
+        // france
+        'BFO',
+
+        // south africa
+        'TSUM',
+
+        // aus
+        'WRAB',
+
+        'FUNA',
+        'TARA',
+
+        // china
+        'ENH',
+        
+        // NO IDEA
+        'KURK',
+        'MAKZ',
+
+        'GNI',
+
+    ]
+
     var colourScale = d3.scaleSequential(d3.interpolateTurbo);
 
     let width = 800;
@@ -299,6 +350,7 @@
             });
 
         stations.forEach(async station => {
+            if (eliminate.includes(station.name)) return;
             if (!station.url) return;
 
             console.log(`fetching ${station.url}`);
@@ -318,7 +370,7 @@
                 .circle(40)
                 .center(ss[0], ss[1])
                 .fill("none")
-                .stroke("black")
+                .stroke({ color: "black", size: 10, opacity: .1})
             
             overlay
                 .text(station.name)
