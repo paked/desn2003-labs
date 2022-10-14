@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+
+</head>
+<body>
+
+    
+<h1>Get Peaks</h1>
+Seconds interval: <input type="text" id="Seconds" value="1">
+<br>
+<p>Paste Data:</p>
+<textarea id="Data" name="d" rows="4" cols="50"></textarea>
+<br>
+<button onclick="dataSplit()">Try it</button>
+<p>to set the start date please do so in the script. doesn't like taking dates from input fields for some reason. more like jankscript</p>
+
+<script>
+    
+function dataSplit() {
+  // 
+  let start = new Date ("2020-01-28T19:09:23.994500");
+  let end = new Date ("2020-01-28T19:09:23.994500");
+  end.setMinutes(start.getMinutes() + 30);
+  console.log(start);
+  console.log(end);
+  let TargetSeconds = document.getElementById("Seconds").value;
+  let text = document.getElementById("Data").value.toString();
+  console.log("Splitting...")
+  let rows = text.split('\n').slice(1).map(line => line.split('  '));
+    console.log("split complete");
+    let prevSecond, currentSecond, diffSeconds;
+    let topScore = 0;
+    let secondsPassed = 0;
+    let TopScores = [];
+    let dataStart = new Date (rows[0][0]);
+    let pStart = parseInt(dataStart.getSeconds());
+    // it's -2 because they have an empty row at the end lol
+    let last = rows.slice(-2)[0][0];
+    console.log(last);
+    let endDate = new Date (last);
+    console.log(dataStart.toString());
+
+    console.log(endDate.toString());
+  rows.forEach(row => {
+    let [time, strnum] = row;
+    let d = new Date (time);
+    if (d < start || d > end) {
+      return;
+    }
+    strnum = Math.log(Math.abs(parseInt(strnum)));
+    // get the time
+    //this tells js that its UTC time but we dont care about timezone for this... just using it so it'll read the time properly
+    currentSecond = parseInt(time.split(".")[0].slice(-2));
+    
+    if (strnum > topScore) {
+       topScore = strnum;
+    }
+    
+    if (prevSecond < currentSecond) {
+      secondsPassed++;
+      console.log("new second");
+      if (secondsPassed == TargetSeconds) {
+        TopScores.push([pStart, topScore]);
+        topScore = 0;
+        secondsPassed = 0;
+        pStart = currentSecond;
+      }
+    }
+    
+    prevSecond = currentSecond;
+  })
+  console.log(TopScores);
+
+  
+  // (B) ARRAY TO CSV STRING
+  var csv = "";
+  for (let row of TopScores) {
+    for (let col of row) { csv += col + ","; }
+    csv += "\r\n";
+  }
+ 
+  // (C) CREATE BLOB OBJECT
+  var myBlob = new Blob([csv], {type: "text/csv"});
+ 
+  // (D) CREATE DOWNLOAD LINK
+  var url = window.URL.createObjectURL(myBlob);
+  var anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = "demo.csv";
+ 
+  // (E) "FORCE DOWNLOAD"
+  // NOTE: MAY NOT ALWAYS WORK DUE TO BROWSER SECURITY
+  // BETTER TO LET USERS CLICK ON THEIR OWN
+  anchor.click();
+  window.URL.revokeObjectURL(url);
+  anchor.remove();
+}
+
+</script>
+
+    
+</body>
+</html>
