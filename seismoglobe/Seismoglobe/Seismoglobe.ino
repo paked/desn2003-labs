@@ -5,11 +5,15 @@
 // #define FASTLED_FORCE_SOFTWARE_PINS
 #include <FastLED.h>
 
-DEFINE_GRADIENT_PALETTE( colourGradient ) {
-  0,     18, 22, 255,   
-40,   200, 18, 255, 
-50,   255, 0, 0 };
+DEFINE_GRADIENT_PALETTE( heatmap_gp ) {
+  0,     0,  0,  255,   //blue
+64,   255,  0,  255,   //purple
+128,   255, 140, 0, // orange
+192,   255, 255, 0, // yellow
+255,   255,0,  0,   //red
+}; //full white
 
+CRGBPalette16 myPal = heatmap_gp;
 
 extern const uint8_t ledsToStations[];
 extern const uint8_t PROGMEM stationsToData[][122];
@@ -27,14 +31,11 @@ void setup() {
   Serial.begin(9600);
 	// sanity check delay - allows reprogramming if accidently blowing power w/leds
  	delay(2000);
-  FastLED.addLeds<WS2811, DATA_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
 }
 int worldtime = 0;
 
 void loop() {
-  CRGBPalette16 myPal = colourGradient;
-
-
   for (int led = 0; led < 26; led++) {
     // station
     uint8_t station = ledsToStations[led];
@@ -43,13 +44,9 @@ void loop() {
       continue;
     }
 
-    uint8_t val = pgm_read_byte(&stationsToData[station][worldtime % 122]);
+    uint8_t val = pgm_read_byte(&stationsToData[station][worldtime % 120]);
 
-    Serial.println(val);
-
-    leds[led].r = val;
-        leds[led].b = val;
-            leds[led].g = val;
+    leds[led] = ColorFromPalette( myPal, val, 64, LINEARBLEND);
   }
 
   FastLED.show();
@@ -57,5 +54,5 @@ void loop() {
 
   delay(100);
 
-  Serial.println("done!" + String(worldtime % 122));
+  Serial.println("done!" + String(worldtime % 120));
 }
