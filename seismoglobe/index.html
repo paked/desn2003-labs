@@ -361,12 +361,32 @@
                     long: row[4],
                     url: urls[row[0] + '.00'],
                 }
-            });
+            })
+            .filter(station => {
+                if (eliminate.includes(station.name)) return false;
+                if (!station.url) return false;
+
+                return true;
+            })
+        
+        console.log(JSON.stringify(
+            stations.map(({name, lat, long}) => {
+            return {
+                "type": "Feature",
+                "properties": {
+                    "name": name,
+                },
+                "geometry": {
+                    "coordinates": [
+                    parseFloat(long),
+                    parseFloat(lat),
+                ],
+                    "type": "Point"
+                }
+                }
+        })));
 
         stations.forEach(async station => {
-            if (eliminate.includes(station.name)) return;
-            if (!station.url) return;
-
             console.log(`fetching ${station.url}`);
             let raw = await fetch(`cuba-region/${station.url}`);
             let txt = await raw.text();
