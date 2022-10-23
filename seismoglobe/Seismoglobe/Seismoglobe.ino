@@ -5,15 +5,15 @@
 // #define FASTLED_FORCE_SOFTWARE_PINS
 #include <FastLED.h>
 
-DEFINE_GRADIENT_PALETTE( heatmap_gp ) {
-  0,     0,  0,  255,   //blue
-64,   255,  0,  255,   //purple
-128,   255, 140, 0, // orange
-192,   255, 255, 0, // yellow
-255,   255,0,  0,   //red
-}; //full white
+//DEFINE_GRADIENT_PALETTE( heatmap_gp ) {
+//  0,     0,  0,  255,   //blue
+//64,   255,  0,  255,   //purple
+//128,   255, 140, 0, // orange
+//192,   255, 255, 0, // yellow
+//255,   255,0,  0,   //red
+//}; //full white
 
-CRGBPalette16 myPal = heatmap_gp;
+//CRGBPalette16 myPal = heatmap_gp;
 
 extern const uint8_t ledsToStations[];
 extern const uint8_t PROGMEM stationsToData[][122];
@@ -21,7 +21,8 @@ extern const uint8_t PROGMEM stationsToData[][122];
 // How many leds are in the strip?
 #define NUM_LEDS 100
 
-#define DATA_PIN 3
+#define DATA_PIN 5
+#define BRIGHTNESS 32
 
 // This is an array of leds.  One item for each led in your strip.
 CRGB leds[NUM_LEDS];
@@ -32,27 +33,46 @@ void setup() {
 	// sanity check delay - allows reprogramming if accidently blowing power w/leds
  	delay(2000);
   FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
+  FastLED.setBrightness(  BRIGHTNESS );
+    
 }
 int worldtime = 0;
 
 void loop() {
-  for (int led = 0; led < 26; led++) {
-    // station
-    uint8_t station = ledsToStations[led];
-
-    if (station >= 100) {
+  for (int i = 0; i < 86; i++) {
+    uint8_t val = ledsToStations[i];
+    if (val == 255) {
       continue;
     }
 
-    uint8_t val = pgm_read_byte(&stationsToData[station][worldtime % 120]);
+//    Serial.println("hello?" + String(i) + " " + String((int) val));
 
-    leds[led] = ColorFromPalette( myPal, val, 64, LINEARBLEND);
+    leds[i] = CRGB::White;
   }
 
   FastLED.show();
-  worldtime += 1;
 
-  delay(100);
+  delay(1000);
 
-  Serial.println("done!" + String(worldtime % 120));
+  return;
+  
+//  for (int led = 0; led < 26; led++) {
+//    // station
+//    uint8_t station = ledsToStations[led];
+//
+//    if (station >= 100) {
+//      continue;
+//    }
+//
+//    uint8_t val = pgm_read_byte(&stationsToData[station][worldtime % 120]);
+//
+//    leds[led] = ColorFromPalette( myPal, val, 64, LINEARBLEND);
+//  }
+//
+//  FastLED.show();
+//  worldtime += 1;
+//
+//  delay(100);
+//
+//  Serial.println("done!" + String(worldtime % 120));
 }
