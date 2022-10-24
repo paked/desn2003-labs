@@ -21,22 +21,11 @@ Seconds interval: <input type="text" id="Seconds" value="15">
  <textarea id="content-target"></textarea>
 <br>
 <button onclick="dataSplit()">Process + Download</button>
-<p>this will record the data between between</p><p id="sd"></p><p>and</p><p id="ed"></p>
-
-<p>to set the start date please do so in the script. doesn't like taking dates from input fields for some reason & icba getting it working. more like jankscript</p>
-
 <script>
 
   // from https://stackoverflow.com/questions/31746837/reading-uploaded-text-file-contents-in-html
 document.getElementById('input-file')
   .addEventListener('change', getFile)
-
-let start = new Date ("2004-12-26T00:57:52.000000");
-document.getElementById("sd").innerHTML = start;
-
-let end = new Date ("2004-12-26T00:57:52.000000");
-end.setMinutes(start.getMinutes() + 30);
-document.getElementById("ed").innerHTML = end;
 
 let filename = "empty.csv";
 
@@ -68,9 +57,7 @@ function readFileContent(file) {
 }
     
 function dataSplit() {
-  // 
-  console.log(start);
-  console.log(end);
+
   let TargetSeconds = document.getElementById("Seconds").value;
   let text = document.getElementById("content-target").value.toString();
   console.log("Splitting...")
@@ -96,9 +83,6 @@ function dataSplit() {
     
     let [time, strnum] = row;
     let d = new Date (time);
-    if (d < start || d > end) {
-      return;
-    }
     strnum = Math.log(Math.abs(parseInt(strnum)));
     // get the time
     //this tells js that its UTC time but we dont care about timezone for this... just using it so it'll read the time properly
@@ -106,13 +90,14 @@ function dataSplit() {
     
     if (strnum > topScore) {
        topScore = strnum;
+       console.log(strnum)
     }
     
     if (prevSecond < currentSecond) {
       secondsPassed++;
       console.log("new second");
       if (secondsPassed == TargetSeconds) {
-        topScore = parseInt(rescale(topScore,4,17,0,255));
+        topScore = parseInt(rescale(topScore,6,17,0,255));
         if (topScore > 255) {topScore=255};
         if (topScore < 0) {topScore=0};
         TopScores.push([topScore]);
