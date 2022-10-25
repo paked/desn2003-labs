@@ -30,7 +30,95 @@ stationOrder = [
 "MSEY",
 "DGAR",
 "COCO",
-"KAPI"
+"KAPI",
+
+# None,
+"SAML",
+"SACV",
+"SDV",
+"XMAS",
+None,
+None,
+None,
+None,
+None,
+None,
+"DAV",
+None,
+None,
+None,
+"PALK",
+None,
+None,
+None,
+"FURI",
+"RAYN",
+"PAB",
+"ANWB",
+None,
+"GTBY",
+"TEIG",
+"SLBS",
+None,
+None,
+None,
+"POHA",
+None,
+None,
+None,
+"KWJN",
+None,
+"GUMO",
+None,
+None,
+None,
+"CHTO",
+None,
+None,
+None,
+"UOSS",
+"BBSR",
+None,
+None,
+None,
+"PFO",
+None,
+None,
+None,
+None,
+"MIDW",
+"MAJO",
+"XAN",
+None,
+"OSA",
+"KIV",
+None,
+"GRFO",
+None,
+"ESK",
+"HIV",
+None,
+"HRV",
+None,
+"RSSD",
+None,
+"COR",
+"ADK",
+"HIA",
+"AAK",
+"OBN",
+"BORG",
+"FFC",
+'KDAK',
+'MA2',
+'YAK',
+'BORK',
+'KIV',
+'SFJD',
+'COLA',
+'BILL',
+'TIXI',
+'TATO',
 ]
 
 data = {}
@@ -69,8 +157,12 @@ dataMap = []
 ledsToStations = []
 
 for station in stationOrder:
+    if station is None:
+        ledsToStations.append('' + str(255))
+        continue
+
     if station not in data:
-        ledsToStations.append('' + str(255));
+        ledsToStations.append('' + str(254));
         continue
     
     stationMap[station] = lastStation
@@ -85,7 +177,8 @@ for station in stationOrder:
 
     lastStation += 1
 out = f"""
-const uint8_t PROGMEM ledsToStations[] = {{
+const uint8_t ledsToStationsLength = {len(ledsToStations)};
+const uint8_t ledsToStations[] = {{
     {','.join(ledsToStations)}
 }};
 
