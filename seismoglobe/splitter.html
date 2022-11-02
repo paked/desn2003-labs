@@ -23,7 +23,11 @@ Seconds interval: <input type="text" id="Seconds" value="15">
 <button onclick="dataSplit()">Process + Download</button>
 <script>
 
-  // from https://stackoverflow.com/questions/31746837/reading-uploaded-text-file-contents-in-html
+  /* CODE SOURCES: 
+    code to get text from the text field is edited from https://stackoverflow.com/a/40580004 
+    code to download text as a CSV https://code-boxx.com/javascript-export-array-csv/#sec-csv 
+  */
+ 
 document.getElementById('input-file')
   .addEventListener('change', getFile)
 
@@ -86,7 +90,7 @@ function dataSplit() {
     strnum = Math.log(Math.abs(parseInt(strnum)));
     // get the time
     //this tells js that its UTC time but we dont care about timezone for this... just using it so it'll read the time properly
-    currentSecond = parseInt(time.split(".")[0].slice(-2));
+    /*currentSecond = parseInt(time.split(".")[0].slice(-2));
     
     if (strnum > topScore) {
        topScore = strnum;
@@ -95,7 +99,7 @@ function dataSplit() {
     
     if (prevSecond < currentSecond) {
       secondsPassed++;
-      console.log("new second");
+      //console.log("new second");
       if (secondsPassed == TargetSeconds) {
         topScore = parseInt(rescale(topScore,6,17,0,255));
         if (topScore > 255) {topScore=255};
@@ -108,6 +112,10 @@ function dataSplit() {
     }
     
     prevSecond = currentSecond;
+    */
+
+    TopScores.push([strnum]);
+
   })
   console.log(TopScores);
 
